@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+.counter-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.counter-container .counter-card {
+  position: relative;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 6px;
+  flex: 1;
+  background: whitesmoke;
+}
+
+.counter-container h1, .counter-container h3 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.counter-container .counter-card-title {
+  margin-top: 50px;
+  color: #4C4C4C;
+}
+
+.counter-container .counter-card-value {
+  position: relative;
+  font-size: 20px;
+  color: #FFB020;
+  top: 30px;
+}
+
+.counter-container .counter-card-buttons-container {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.counter-container .counter-card-button {
+  height: 35px;
+  width: 125px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 3px;
+  color: whitesmoke;
+}
+
+.counter-container .counter-card-button-increment {
+  background: #7AC70C;
+  border-bottom: 4px solid #65a50a;
+}
+
+.counter-container .counter-card-button-decrement {
+  background: #D33131;
+  border-bottom: 4px solid #b92727;
+}
+
+.counter-container .counter-card-button-increment:hover, .counter-container .counter-card-button-increment:active {
+  background: #71b90b;
+}
+
+.counter-container .counter-card-button-decrement:hover, .counter-container .counter-card-button-decrement:active {
+  background: #ca2b2b;
+}
+
+.counter-container .no-border, .counter-container .counter-card-button-increment:active, .counter-container .counter-card-button-decrement:active {
+  border: none;
+}

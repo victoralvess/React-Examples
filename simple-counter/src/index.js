@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
-import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { Provider } from 'react-redux';
-import store from './store';
+import { App, Consumer } from './containers/App';
+import CounterCard from './components/CounterCard';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <App>
+    <Consumer>
+    	{ (context) => <CounterCard {...context} /> }
+    </Consumer>
+  </App>,
   document.getElementById('root')
 );
 

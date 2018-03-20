@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+h1, h3 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+%no-border {
+  border: none;
+}
+
+$base-text-color: #4C4C4C;
+$increment-button-bg-color: #7AC70C;
+$decrement-button-bg-color: #D33131;
+$increment-button-darker-color: darken($color: $increment-button-bg-color, $amount: 7);
+$decrement-button-darker-color: darken($color: $decrement-button-bg-color, $amount: 7);
+$button-text-color: whitesmoke;
+$count-color: #FFB020;
+$flat-border: 4px solid;
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+
+  background: rgb(255, 255, 255);
+
+  .counter {
+    position: relative;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 6px;
+
+    flex: 1;
+
+    background: whitesmoke;    
+  }    
+
+  .counter__title {
+    margin-top: 50px;
+    color: $base-text-color;
+  }
+
+  .counter__value {
+    perspective: 1000px;
+    position: relative;
+    font-size: 20px;
+    color: $count-color;
+    top: 30px;
+    animation: ee 100ms ease-in-out 0s infinite alternate forwards;    
+    animation-play-state: paused;
+  }
+
+ 
+  /*
+    November
+  */
+  .counter__value.ee_11 {
+    animation-play-state: running;
+  }
+
+  /*
+    28
+  */
+  .counter__value.ee_28 {
+    animation-play-state: running;
+  }
+
+  /*
+    2000
+  */
+  .counter__value.ee_2000 {
+    animation-play-state: running;
+  }
+
+  .counter__actions {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .counter__button {
+    height: 35px;
+    width: 125px;
+    margin: 0 20px;
+    border: none;
+    border-radius: 3px;
+    color: $button-text-color;
+
+    transition: background 200ms ease-in-out,
+                border 300ms ease-in-out;
+  
+
+    &--increment {
+      background: $increment-button-bg-color;
+      border-bottom: $flat-border $increment-button-darker-color;      
+        
+      &:hover {
+        background: lighten($color: $increment-button-darker-color, $amount: 4);
+      }
+      
+      &:active {
+        @extend %no-border;
+        background: lighten($color: $increment-button-darker-color, $amount: 4);   
+      }  
+    }
+
+    &--decrement {
+      background: $decrement-button-bg-color;
+      border-bottom: $flat-border $decrement-button-darker-color;
+    
+      &:hover {
+        background: lighten($color: $decrement-button-darker-color, $amount: 4);
+      }
+
+      &:active {
+        @extend %no-border;
+        background: lighten($color: $decrement-button-darker-color, $amount: 4);
+      }
+    }
+  }
+}
+
+@keyframes ee {
+  0% {
+    transform: translateX(0px) rotateX(0deg);
+  }
+
+  50% {
+    transform: translateX(2px) rotateX(5deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotateX(0deg); 
+  }
+}

@@ -5,12 +5,12 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import { App, Consumer } from './containers/App';
-import CounterCard from './components/CounterCard';
+import Counter from './components/Counter';
 
 ReactDOM.render(
   <App>
     <Consumer>
-    	{ (context) => <CounterCard {...context} /> }
+    	{ (context) => <Counter {...context} /> }
     </Consumer>
   </App>,
   document.getElementById('root')
